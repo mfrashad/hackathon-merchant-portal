@@ -2,7 +2,7 @@ class User < ApplicationRecord
   enum role: [:user, :merchant, :admin]
   after_initialize :set_default_role, :if => :new_record?
 
-  belongs_to :company
+  belongs_to :company, optional: true
   has_many :payments
 
   def set_default_role
@@ -12,7 +12,7 @@ class User < ApplicationRecord
   def total_amount_spent
     sum = 0
     self.payments.each do |payment|
-      sum = payment.amount
+      sum += payment.amount
     end
     return sum
   end

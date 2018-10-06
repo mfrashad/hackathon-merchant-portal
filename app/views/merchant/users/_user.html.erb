@@ -1,6 +1,6 @@
-<td> <%= user.name %> </td>
+<td> <%= link_to user.name, [:merchant, user] %> </td>
 <td>
-  <%= link_to user.email, [:merchant, user] %>
+  <%= user.email %>
 </td>
 <td>RM  <%= user.total_amount_spent %> </td>
 <td> <%= user.level %> </td>

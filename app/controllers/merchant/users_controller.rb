@@ -10,6 +10,7 @@ module Merchant
 
     def show
       @user = User.find(params[:id])
+      @payments = @user.payments.order('created_at desc')
       unless current_user.admin? || current_user.role == 'merchant'
         unless @user == current_user
           redirect_to root_path, :alert => "Access denied."
