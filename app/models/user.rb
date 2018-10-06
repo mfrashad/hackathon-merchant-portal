@@ -9,6 +9,18 @@ class User < ApplicationRecord
     self.role ||= :user
   end
 
+  def total_amount_spent
+    sum = 0
+    self.payments.each do |payment|
+      sum = payment.amount
+    end
+    return sum
+  end
+
+  def last_payment_date
+    self.payments.order(:created_at)&.last&.created_at
+  end
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
