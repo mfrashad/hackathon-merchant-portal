@@ -10,42 +10,14 @@
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
-  <body class="hold-transition skin-blue sidebar-mini">
+  <body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
   <div class="wrapper">
     <header class="main-header">
       <%= render 'layouts/navigation' %>
     </header>
-    <%= render 'layouts/aside' %>
-
-    <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Merchant Dashboard
-        <small></small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
-      </ol>
-    </section>
-
-    <!-- Main content -->
-    <section class="content container-fluid">
-
-      <!--------------------------
-        | Your Page Content Here |
-        -------------------------->
-      <%= render 'layouts/messages' %>
-      <%= yield %>
-
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-
-  <%= render 'layouts/control_sidebar'%>
+      <%= render 'layouts/aside' %>
+      <%= render 'layouts/main' %>
+      <%= render 'layouts/control_sidebar'%>
   </div>
   </body>
 </html>
