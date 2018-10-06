@@ -1,0 +1,10 @@
+<td> <%= user.name %> </td>
+<td>
+  <%= link_to user.email, [:merchant, user] %>
+</td>
+<td> <%= user.amount_spent %> </td>
+<td> <%= user.level %> </td>
+<td> <%= user.visit_date.strftime("%B %d, %Y") %> </td>
+<td>
+  <%= link_to("Delete user", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs') unless user == current_user %>
+</td>

@@ -1,0 +1,24 @@
+<div class="container">
+  <h3>Users</h3>
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Amount Spent</th>
+          <th>Level</th>
+          <th>Visit Date</th>
+          <th>Delete</th>
+        </tr>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <%= render user %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

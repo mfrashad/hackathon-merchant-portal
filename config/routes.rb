@@ -3,7 +3,15 @@ Rails.application.routes.draw do
       resources :users
       root to: "users#index"
     end
+  namespace :merchant do
+      resources :users
+      root to: "users#index"
+    end
   root to: 'visitors#index'
   devise_for :users
+  as :user do
+    get 'login', to: 'devise/sessions#new'
+    get 'logout', to: 'devise/sessions#destroy'
+  end
   resources :users
 end
