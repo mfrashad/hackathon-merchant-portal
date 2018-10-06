@@ -1,10 +1,11 @@
 module Merchant
   class UsersController < ApplicationController
     before_action :authenticate_user!
-    before_action :admin_only, :except => [:show, :index]
+    before_action :merchant_only
 
     def index
       @users = User.where(role: 'user')
+      @company = current_user.company
     end
 
     def show
@@ -33,8 +34,8 @@ module Merchant
 
     private
 
-    def admin_only
-      unless current_user.admin?
+    def merchant_only
+      unless current_user.admin? || current_user.role == 'merchant'
         redirect_to root_path, :alert => "Access denied."
       end
     end

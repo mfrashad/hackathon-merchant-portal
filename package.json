@@ -1,5 +1,7 @@
 {
   "name": "hackathon2",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "admin-lte": "2.3.5"
+  }
 }

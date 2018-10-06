@@ -1,0 +1,41 @@
+ <div class="row">
+  <!-- fix for small devices only -->
+  <div class="clearfix visible-sm-block"></div>
+  <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+      <span class="info-box-icon bg-green"><i class="ion ion-social-usd-outline"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text">Profits</span>
+        <span class="info-box-number">RM <%= @company.total_profits %></span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+
+  <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+      <span class="info-box-icon bg-red"><i class="ion ion-social-usd-outline"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text">Payable Amount</span>
+        <span class="info-box-number">RM <%= @company.total_payable_amount %></span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+
+  <!-- /.col -->
+  <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+      <span class="info-box-icon bg-yellow"><i class="ion ion-ios-cart-outline"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text">Transaction</span>
+        <span class="info-box-number"> <%= @company.payments.count %> </span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+</div>
