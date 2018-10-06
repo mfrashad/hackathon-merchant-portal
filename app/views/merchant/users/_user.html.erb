@@ -5,6 +5,3 @@
 <td>RM  <%= user.total_amount_spent %> </td>
 <td> <%= user.level %> </td>
 <td> <%= user.last_payment_date.strftime("%B %d, %Y") if user.last_payment_date%> </td>
-<td>
-  <%= link_to("Delete user", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs') unless user == current_user %>
-</td>
