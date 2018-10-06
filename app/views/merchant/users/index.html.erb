@@ -1,4 +1,8 @@
 <div class="container">
+  <h1>
+    Merchant Dashboard - <%= @current_user&.company&.name %>
+    <small></small>
+  </h1>
   <%= render "widgets" %>
   <h3>Users</h3>
   <div class="row">

@@ -1,5 +1,105 @@
-<h3>User</h3>
-<p>Name: <%= @user.name if @user.name %></p>
-<p>Email: <%= @user.email if @user.email %></p>
-<p>Level: <%= @user.level if @user.level %></p>
-<p>Amount Spent: <%= @user.total_amount_spent if @user.amount_spent %></p>
+<div class="row">
+  <div class="col-md-12">
+    <div class="box box-widget widget-user">
+      <!-- Add the bg color to the header using any of the bg-* classes -->
+      <div class="widget-user-header bg-aqua-active">
+        <h3 class="widget-user-username"><%= @user&.name %> </h3>
+        <h5 class="widget-user-desc"><%= @user&.company&.name %> </h5>
+      </div>
+      <div class="widget-user-image">
+        <%= image_tag "avatar.png", class: "img-circle" %>
+      </div>
+      <div class="box-footer">
+        <div class="row">
+          <div class="col-sm-4 border-right">
+            <div class="description-block">
+              <div style="display:inline;width:90px;height:90px;"><input type="text" class="spent-knob" value="<%= @user.amount_spent%>" data-width="90" data-height="90" data-fgcolor="#3c8dbc" style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px; background: none; font: bold 18px Arial; text-align: center; color: rgb(60, 141, 188); padding: 0px; -webkit-appearance: none;"></div>
+              <h5 class="description-header">SPENT</h5>
+              <span class="description-text">RM <%= @user.amount_spent%> </span>
+            </div>
+            <!-- /.description-block -->
+          </div>
+          <!-- /.col -->
+          <div class="col-sm-4 border-right">
+            <div class="description-block">
+              <div style="display:inline;width:90px;height:90px;"><input type="text" class="level-knob" value="<%= @user.level %>" data-width="90" data-height="90" data-fgcolor="#3c8dbc" style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px; background: none; font: bold 18px Arial; text-align: center; color: rgb(60, 141, 188); padding: 0px; -webkit-appearance: none;"></div>
+              <h5 class="description-header">LEVEL</h5>
+              <span class="description-text"><%= @user.level %> </span>
+            </div>
+            <!-- /.description-block -->
+          </div>
+          <!-- /.col -->
+          <div class="col-sm-4">
+            <div class="description-block">
+              <div style="display:inline;width:90px;height:90px;"><input type="text" class="purchase-knob" value="<%= @user.payments.count %>" data-width="90" data-height="90" data-fgcolor="#3c8dbc" style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px; background: none; font: bold 18px Arial; text-align: center; color: rgb(60, 141, 188); padding: 0px; -webkit-appearance: none;"></div>
+              <h5 class="description-header">PURCHASES</h5>
+              <span class="description-text"><%= @user.payments.count %> </span>
+            </div>
+            <!-- /.description-block -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+    </div>
+  </div>
+  <!-- /.col -->
+  </div>
+
+ <div class="col-md-12">
+ <h3> Transactions </h3>
+    <div class="box">
+      <!--div class="box-header">
+        <h3 class="box-title"></h3>
+        <div class="box-tools">
+          <div class="input-group input-group-sm" style="width: 150px;">
+            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+            <div class="input-group-btn">
+              <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+      </div-->
+      <!-- /.box-header -->
+      <div class="box-body table-responsive no-padding">
+        <table class="table table-hover">
+          <tr>
+            <th>Date</th>
+            <th>Amount Spent</th>
+            <th>Company</th>
+          </tr>
+          <tbody>
+            <% @user.payments.each do |payment| %>
+              <tr>
+                <%= render 'payment', payment: payment %>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div> <!--BOX-->
+  </div> <!--COL-->
+
+</div>
+
+
+
+<script>
+$(".spent-knob").knob({
+    'min':0,
+    'max':1000
+});
+
+$(".level-knob").knob({
+    'min':0,
+    'max':10
+});
+
+$(".purchase-knob").knob({
+    'min':0,
+    'max':1000
+});
+
+
+
+</script>

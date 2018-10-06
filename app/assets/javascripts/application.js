@@ -15,6 +15,8 @@
 //= require jquery_ujs
 //= require admin-lte/bootstrap/js/bootstrap
 //= require admin-lte/dist/js/app.js
+//= require admin-lte/plugins/knob/jquery.knob.js
+//= require admin-lte/plugins/iCheck/icheck.min.js
 //= require_tree .
 
 $(document).ready(function(){
