@@ -7,7 +7,7 @@
         <h5 class="widget-user-desc"><%= @user&.company&.name %> </h5>
       </div>
       <div class="widget-user-image">
-        <%= image_tag "avatar.png", class: "img-circle" %>
+        <%= image_tag "square-avatar.jpg", class: "img-circle" %>
       </div>
       <div class="box-footer">
         <div class="row">
@@ -87,17 +87,20 @@
 <script>
 $(".spent-knob").knob({
     'min':0,
-    'max':1000
+    'max':1000,
+    'readOnly': true
 });
 
 $(".level-knob").knob({
     'min':0,
-    'max':10
+    'max':10,
+    'readOnly': true
 });
 
 $(".purchase-knob").knob({
     'min':0,
-    'max':1000
+    'max':1000,
+    'readOnly': true
 });
 
 

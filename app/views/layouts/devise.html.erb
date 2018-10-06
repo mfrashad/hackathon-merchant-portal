@@ -3,7 +3,7 @@
 <html>
 <head>
     <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" %>
-  <%= stylesheet_link_tag "http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" %>
+    <%= stylesheet_link_tag "http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Hackathon2" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Hackathon2" %>">
@@ -25,12 +25,6 @@
 <div class="login-box">
 <%= yield %>
 
-<!-- jQuery 3 -->
-<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- iCheck -->
-<script src="../../plugins/iCheck/icheck.min.js"></script>
 <script>
   $(function () {
     $('input').iCheck({
