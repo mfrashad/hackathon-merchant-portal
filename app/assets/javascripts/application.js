@@ -10,9 +10,15 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery3
 //= require popper
-//= require rails-ujs
-//= require bootstrap-sprockets
+//= require jquery
+//= require jquery_ujs
+//= require admin-lte/bootstrap/js/bootstrap
 //= require admin-lte/dist/js/app.js
 //= require_tree .
+
+$(document).ready(function(){
+  $("a.sidebar-toggle").on('click', function(){
+    $('body').toggleClass('sidebar-collapse')
+  })
+})
