@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   namespace :admin do
       resources :users
+      resources :payments
+      resources :companies
       root to: "users#index"
     end
   namespace :merchant do
