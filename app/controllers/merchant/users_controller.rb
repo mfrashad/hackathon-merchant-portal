@@ -37,7 +37,7 @@ module Merchant
 
     def merchant_only
       unless current_user.admin? || current_user.role == 'merchant'
-        redirect_to root_path, :alert => "Access denied."
+        redirect_to new_user_session_path, :alert => "Access denied."
       end
     end
 
