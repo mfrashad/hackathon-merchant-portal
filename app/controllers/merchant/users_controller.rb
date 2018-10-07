@@ -5,7 +5,8 @@ module Merchant
     before_action :get_company
 
     def index
-      @users = User.where(role: 'user')
+      user_ids = @company.payments.group_by(&:user_id).map { |arr| arr[0] }
+      @users = User.where(id: user_ids)
     end
 
     def show
