@@ -2,10 +2,10 @@ module Merchant
   class UsersController < ApplicationController
     before_action :authenticate_user!
     before_action :merchant_only
+    before_action :get_company
 
     def index
       @users = User.where(role: 'user')
-      @company = current_user.company
     end
 
     def show

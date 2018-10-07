@@ -1,0 +1,4 @@
+<td> <%= payment.created_at.strftime("%B %d, %Y") %> </td>
+<td> <%= link_to payment.user.name, [:merchant, payment.user] %>  </td>
+<td>RM <%= payment.amount %> </td>
+<td> <%= payment.company.name %> </td>

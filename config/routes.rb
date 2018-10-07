@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     end
   namespace :merchant do
       resources :users
+      resources :payments
       root to: "users#index"
     end
   root to: 'visitors#index'
